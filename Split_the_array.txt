@@ -1,0 +1,22 @@
+You are given an integer array nums of even length. You have to split the
+array into two parts nums1 and nums2 such that:
+
+nums1.length == nums2.length == nums.length / 2.
+nums1 should contain distinct elements.
+nums2 should also contain distinct elements.
+
+Return true if it is possible to split the array, and false otherwise.
+
+solution2 in python3 =>
+
+class Solution:
+    def isPossibleToSplit(self, nums: List[int]) -> bool:
+        hs={}
+        for i in nums:
+            if i in hs.keys() and hs[i]==2:
+                return False
+            elif i in hs.keys():
+                hs[i]=hs[i]+1
+            else:
+                hs[i]=1
+        return True 
