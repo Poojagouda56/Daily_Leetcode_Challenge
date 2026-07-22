@@ -1,0 +1,20 @@
+Given an integer array nums, find the subarray with the largest sum, and return its sum.
+
+solution in python3 =>
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        # max_so_far=nums[0]
+        # max_ending_here=nums[0]
+        # for i in range(1,len(nums)):
+        #     max_ending_here=max(nums[i], max_ending_here + nums[i])
+        #     max_so_far = max(max_so_far,max_ending_here)
+        # return max_so_far
+        psum=0
+        submax=nums[0]
+        for i in nums:
+            psum=max(psum+i,i)
+            submax=max(submax,psum)
+        return submax
