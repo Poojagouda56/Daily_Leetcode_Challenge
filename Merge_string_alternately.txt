@@ -1,0 +1,22 @@
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting
+with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
+
+Return the merged string.
+
+solution2 in python3 =>
+
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        res = []
+        n = min(len(word1), len(word2))
+
+        for i in range(n):
+            res.append(word1[i])
+            res.append(word2[i])
+
+        if len(word1) > n:
+            res.append(word1[n:])
+        if len(word2) > n:
+            res.append(word2[n:])
+
+        return "".join(res)
