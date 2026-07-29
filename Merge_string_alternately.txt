@@ -3,7 +3,7 @@ with word1. If a string is longer than the other, append the additional letters 
 
 Return the merged string.
 
-solution2 in python3 =>
+solution1 in python3 =>
 
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
