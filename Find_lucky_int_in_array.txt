@@ -1,0 +1,20 @@
+Given an array of integers arr, a lucky integer is an integer that has a frequency in the array equal to its value.
+
+Return the largest lucky integer in the array. If there is no lucky integer return -1.
+
+solution in python3 =>
+
+class Solution:
+    def findLucky(self, arr: List[int]) -> int:
+        h={}
+        max_val=-1
+        for i in arr:
+            if i in h.keys():
+                h[i]+=1
+            else:
+                h[i]=1  
+        for i in h:
+            if i==h[i]:
+                max_val=max(max_val,i)
+        return max_val        
+        
