@@ -1,0 +1,18 @@
+You are given an integer array nums.
+
+In one move, you may increase the value of any single element nums[i] by 1.
+
+Return the minimum total number of moves required so that all elements in nums become equal.
+
+solution in python3 =>
+
+class Solution:
+    def minMoves(self, nums: List[int]) -> int:
+        ma=0
+        su=0
+        for i in nums:
+            ma=max(ma,i)
+        for i in nums:
+            if i!=ma:
+                su+=(ma-i)    
+        return su
