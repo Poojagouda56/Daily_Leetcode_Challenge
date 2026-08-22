@@ -1,0 +1,35 @@
+Given the head of a singly linked list, return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+solution1 in python3 =>
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        l=head
+        lenn=0
+        while(head!=None):
+            lenn+=1
+            head=head.next
+        lenn=lenn//2
+        lenn+=1
+        head=l
+        count=0
+        while(head!=None):
+            count+=1
+            if(count==lenn):
+                return head
+            else:
+                head=head.next
+
+
+solution2 in python3 =>
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow=head
+        fast=head
+        while fast!=None and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+        return slow
