@@ -1,0 +1,33 @@
+You are given the head of a linked list. Delete the middle node, and return the head of the 
+modified linked list.
+
+The middle node of a linked list of size n is the ⌊n / 2⌋th node from the start using 0-based 
+indexing, where ⌊x⌋ denotes the largest integer less than or equal to x.
+
+For n = 1, 2, 3, 4, and 5, the middle nodes are 0, 1, 1, 2, and 2, respectively.
+
+solution in python3 =>
+
+class Solution:
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        a=[]
+        while(head!=None):
+            a.append(head.val)
+            head=head.next
+        skip=len(a)
+        skip=skip//2+1
+        count=0
+        root=None
+        head=None
+        for i in a:
+            count+=1
+            if(count==skip):
+                continue
+            temp=ListNode(i)
+            if root==None:
+                root=temp
+                head=temp
+            else:
+                root.next=temp
+                root=root.next
+        return head
